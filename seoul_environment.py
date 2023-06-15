@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Seoul Air Pollution Dashboard", page_icon=":bar_chart:", layout="wide")
 
-df = pd.read_csv('./data/seoul_dust_added.csv', encoding = 'cp949')
+df = pd.read_csv('./seoul_data/seoul_dust_added.csv', encoding = 'cp949')
 columns = df.columns
 
 #---SIDE Bar---
