@@ -5,7 +5,8 @@ import pandas as pd
 
 st.set_page_config(page_title="Seoul Air Pollution Dashboard", page_icon=":bar_chart:", layout="wide")
 
-df = pd.read_csv('./seoul_data/seoul_dust_added.csv', encoding = 'cp949')
+df = pd.read_csv("https://drive.google.com/file/d/1Tst3RrBewvJKlyKpt12N2N_X2pZYF5hv/view?usp=drive_link"
+                 , encoding = 'cp949')
 columns = df.columns
 
 #---SIDE Bar---
@@ -50,11 +51,11 @@ fd_average_daily = average_daily.iloc[0]['Finedust(PM10)'].astype('int')
 micro_average_daily = average_daily.iloc[0]['Microdust(PM2.5)'].astype('int')
 
 if (151 < fd_average_daily) or (76 < micro_average_daily):
-    condition_daily = '매우나쁨 😡'
+    condition_daily = 'Terrible 😡'
 elif (81 < fd_average_daily < 150) or (36 < micro_average_daily <= 75):
-    condition_daily = '나쁨 😱'
+    condition_daily = 'Bad 😱'
 elif (fd_average_daily < 80) or (micro_average_daily < 35):
-    condition_daily = '보통 😊'
+    condition_daily = 'Normal 😊'
 
 st.subheader(
     f"Average air quality on {user_month}/{user_day} in {user_location}"
